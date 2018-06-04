@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile</title>
+    <style>
+        .c1{
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            margin:0em;
+            margin-top:2em;
+        }
+        .top{
+            background:#3b78e7;
+            margin:auto;
+            height:3em;
+        }
+        body{
+            margin:0;
+        }
+        .maincontent{
+            align-items: center;
+            justify-content: center;
+            margin-top:10%;
+        }
+        .topLeft{
+            float:right;
+            margin-right:3em;
+            display: flex;
+            height: 100%;
+        }
+        .topCenter{
+            width: 100%;
+            height: 2em;
+        }
+        ul{
+            list-style-type: none;
+            margin:0;
+            padding: 0;
+            overflow: hidden;
+        }
+        li {
+            float: right;
+        }
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        li a:hover:not(.active){
+            background-color: #5388ea;
+        }
+        .btn{
+            min-width: 72px;
+            padding: 6px 30px;
+            font-size: 14px;
+            line-height: 1.42857143;
+            border-radius: 0;
+            background-color:  #fff;
+        }
+        .btn:hover{
+            color: #000;
+            border-color: #000;
+        }
+        .btn:active{
+            box-shadow:none;
+        }
+        form{
+            width:40%;
+        }
+        .form-group{
+            margin-bottom:1.5em;
+            width: 100%;
+        }
+        .maincontent{
+            display:flex;
+            align-items:center;
+            justify-content:center;
+        }
+        .item-right{
+            background-color: #fff;
+            float:right;
+            width:68%;
+            margin-right: 0px;
+            border:1px solid #e6e6e6;
+            transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+        }
+        item-left{
+            padding: 6px 12px;
+            width:30%;
+            text-align: center;
+            transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+<div class="top">
+  </div>
+
+<div class="maincontent">
+
+            <form method="post" action="/profile/{{.UserId}}">
+                <h1 class="form-group">User Settings</h1>
+                <div class="form-group">
+                    <span class="item-left">First Name</span>
+                    <input class="item-right" name="userFirstName" value="{{.UserFirstName}}"/>
+                </div>
+                   <div class="form-group">
+                       <span class="item-left">Last Name</span>
+                       <input class="item-right" name="userLastName" value="{{.UserLastName}}" />
+                   </div>
+                   <div class="form-group">
+                       <span class="item-left">Age</span>
+                       <input class="item-right" name="userLastName" value="{{.Age}}"/>
+                   </div >
+                    <div class="form-group">
+                        <span class="item-left">SipAccount</span>
+                        <input class="item-right" name="sipAccount" value="{{.SipAccount}}" />
+                    </div>
+                    <div class="form-group">
+                        <span class="item-left">Phone Number</span>
+                        <input class="item-right" name="phoneNumber" value="{{.PhoneNumber}}" />
+                    </div>
+                <div class="form-group"><button class="btn" type="submit" >Update Contact Info</button> </div>
+            </form>
+</div>
+  <div class="bottom"></div>
+</body>
+</html>
